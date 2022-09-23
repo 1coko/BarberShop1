@@ -34,13 +34,3 @@ namespace BarberShop
 
 }
 
-
-namespace BarberShop.Modeles
-{
-    static void Main (string[] args)
-    {
-        Client Id = new Client("Abalo", "Koffi", 2020, 'M', 99775522, "abalo@koffi.com", "Lome_Prefecture_du_golfe");
-        Id.IdClient();
-    }
-   
-}
