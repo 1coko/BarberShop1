@@ -180,7 +180,7 @@ namespace BarberShop.Modeles
             return liste;
         }
 
-
+        // Rechercher la liste des clients
         public List<Client> Rechercher(string critereDeRecherche)
         {
             SqlConnection con = null;
