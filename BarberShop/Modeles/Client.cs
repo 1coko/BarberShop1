@@ -23,6 +23,12 @@ namespace BarberShop.Modeles
 
 
         //Constructeur
+
+
+        public Client()
+        {
+
+        }
     public Client (int id, string nom, string prenom, DateTime dateDeNaissance, char sex, string telephone, string mail, string adressePostale)
         {
             Id = id;
@@ -125,7 +131,7 @@ namespace BarberShop.Modeles
             }
         }
 
-        public void Select()
+        public List<Client> Select()
         {
             SqlConnection con = null;
             List<Client> liste = new List<Client>();
@@ -136,6 +142,59 @@ namespace BarberShop.Modeles
 
                 // la requete sql  
                 SqlCommand cm = new SqlCommand("SELECT * FROM Client ", con);
+                //  Ouvrir la connexion  
+                con.Open();
+                //  Executer la requete   
+                SqlDataReader sdr = cm.ExecuteReader();
+                // Iterating Data  
+                while (sdr.Read())
+                {
+                    int id = int.Parse(sdr["IdClient"].ToString());
+                    string nom = sdr["Nom"].ToString();
+                    string prenom = sdr["Prenom"].ToString();
+                    DateTime dateNaiss = DateTime.Parse(sdr["DateDeNaissance"].ToString());
+                    char sex = char.Parse(sdr["Sex"].ToString());
+                    string tel = sdr["Telephone"].ToString();
+                    string mail = sdr["AdresseMail"].ToString();
+                    string adr = sdr["AdressePostale"].ToString();
+
+
+
+                    Client cl = new Client(id, nom, prenom, dateNaiss, sex, tel, mail, adr);
+                    liste.Add(cl);
+                }
+
+                Console.WriteLine("Succes");
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, Erreur." + e);
+            }
+            //Fermer la connexion  
+            finally
+            {
+                con.Close();
+            }
+
+            return liste;
+        }
+
+
+        public List<Client> Rechercher(string critereDeRecherche)
+        {
+            SqlConnection con = null;
+            List<Client> liste = new List<Client>();
+            try
+            {
+                // Creation de la connexion 
+                con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
+
+                // la requete sql  
+
+                string requete = string.Format("select * from Client where Nom like '%{0}%' or AdresseMail  like '%{0}%'", critereDeRecherche);
+
+                SqlCommand cm = new SqlCommand(requete, con);
                 //  Ouvrir la connexion  
                 con.Open();
                 //  Executer la requete   
@@ -170,9 +229,15 @@ namespace BarberShop.Modeles
             {
                 con.Close();
             }
+
+            return liste;
         }
 
-
+        public static decimal CalculSomme()
+        {
+            decimal somme = 2 + 2;
+            return somme;
+        }
 
     }
 }
