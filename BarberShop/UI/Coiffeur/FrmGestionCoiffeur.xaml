@@ -1,0 +1,38 @@
+﻿<Window x:Class="BarberShop.UI.Coiffeur.FrmGestionCoiffeur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BarberShop.UI.Coiffeur"
+        mc:Ignorable="d"
+        Title="FrmGestionCoiffeur" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="gridClients"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,87,48,0" Height="311" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" Nom" Width="2*" Binding="{Binding Nom}"/>
+                <DataGridTextColumn Header=" Prenom" Width="2*" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Header=" Telephone" Width="2*" Binding="{Binding Telephone}"/>
+                <DataGridTextColumn Header=" Email" Width="4*" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header=" Adresse postale" Width="4*" Binding="{Binding AdressePostale}"/>
+                <DataGridTextColumn Header="Date de naissance" Width="2*" Binding="{Binding DateDeNaissance }"/>
+                <DataGridTextColumn Header="Sexe" Width="*" Binding="{Binding Sexe }"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAjoutCoiffeur" Content="Ajouter" HorizontalAlignment="Left" Margin="574,54,0,0" VerticalAlignment="Top" Width="86" Click="btnAjoutCoiffeur_Click"/>
+        <Button x:Name="btnSupprimerCoiffeur" Content="Supprimer" HorizontalAlignment="Left" Margin="457,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="112" Click="btnSupprimerCoiffeur_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.485"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="txtRechercheCoiffeur" HorizontalAlignment="Left" Margin="118,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" KeyDown="txtRechercheCoiffeur_KeyDown"/>
+        <Label Content="Rechercher" HorizontalAlignment="Left" Margin="45,61,0,0" VerticalAlignment="Top" Width="69"/>
+        <Button x:Name="btnUpdateCoiffeur" Content="Update" HorizontalAlignment="Left" Margin="665,54,0,0" VerticalAlignment="Top" Width="87" Click="btnUpdateCoiffeur_Click"/>
+        <Button x:Name="btnRefreshCoiffeur" Content="Refresh" HorizontalAlignment="Left" Margin="366,54,0,0" VerticalAlignment="Top" Width="82" Click="btnRefreshCoiffeur_Click"/>
+
+    </Grid>
+</Window>
