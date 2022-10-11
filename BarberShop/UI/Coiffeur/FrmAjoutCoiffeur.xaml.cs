@@ -37,7 +37,7 @@ namespace BarberShop.UI.Coiffeur
             }
             else
             {
-                // Créer un objet "coiffeur" pour pouvoir renseigner les paramètres préparé dans le constructeur de la classe Coiffeur
+                // Créer un objet "coiffeur" pour pouvoir renseigner les paramètres préparés dans le constructeur de la classe Coiffeur
                 Modeles.Coiffeur coiffeur = new Modeles.Coiffeur(0, txtNomCoiffeur.Text, txtPrenomCoiffeur.Text, txtDateNaissanceCoiffeur.SelectedDate.Value, char.Parse(txtSexeCoiffeur.Text), txtTelephoneCoiffeur.Text, txtEmailCoiffeur.Text, txtAdressePostaleCoiffeur.Text);
                 coiffeur.Créer();
 
@@ -48,12 +48,12 @@ namespace BarberShop.UI.Coiffeur
                 // Ajouter la nouvelle ligne sur la grille WPF qui affiche les données de notre BDD
 
                 // Variable static 
-                ////if (FrmGestionCoiffeur.itemSource != null)
-                ////    FrmGestionCoiffeur.itemSource.Add(coiffeur);
+                if (FrmGestionCoiffeur.itemSource != null)
+                    FrmGestionCoiffeur.itemSource.Add(coiffeur);
 
                 this.Close();
             }
-
+             
         }
 
     }

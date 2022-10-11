@@ -58,7 +58,8 @@ namespace BarberShop.UI.Coiffeur
 
         public void btnAjoutCoiffeur_Click(object sender, RoutedEventArgs e)
         {
-
+            FrmAjoutCoiffeur frmAjoutCoiffeur = new FrmAjoutCoiffeur();
+            frmAjoutCoiffeur.ShowDialog();
         }
 
         public void btnSupprimerCoiffeur_Click(object sender, RoutedEventArgs e)
@@ -78,7 +79,7 @@ namespace BarberShop.UI.Coiffeur
 
         public void txtRechercheCoiffeur_KeyDown(object sender, KeyEventArgs e)
         {
-            test Github
+        
         }
     }
 }

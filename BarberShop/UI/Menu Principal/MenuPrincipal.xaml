@@ -1,0 +1,17 @@
+﻿<Window x:Class="BarberShop.UI.Menu_Principal.MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BarberShop.UI.Menu_Principal"
+        mc:Ignorable="d"
+        Title="MenuPrincipal" Height="450" Width="800">
+    <Grid>
+        <Label Content="Bienvenue sur votre site BarberShop" Margin="180,55,0,334" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left"/>
+        <Label Content="la première appli dédié aux personnes qui n'aiment pas se prendre la tête" Margin="179,105,0,301" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Button Content="Accéder au formulaire client" Margin="180,229,437,159" Click="Button_Click_Client"/>
+        <Button Content="Accéder au formulaire coiffeur" Margin="417,229,200,159" Click="Button_Click_Coiffeur"/>
+
+
+    </Grid>
+</Window>
