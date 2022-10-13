@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="MenuPrincipal" Height="450" Width="800">
     <Grid>
-        <Label Content="Bienvenue sur votre site BarberShop" Margin="180,55,0,334" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left"/>
-        <Label Content="la première appli dédié aux personnes qui n'aiment pas se prendre la tête" Margin="179,105,0,301" HorizontalAlignment="Left" FontWeight="Bold"/>
-        <Button Content="Accéder au formulaire client" Margin="180,229,437,159" Click="Button_Click_Client"/>
-        <Button Content="Accéder au formulaire coiffeur" Margin="417,229,200,159" Click="Button_Click_Coiffeur"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Bienvenue sur votre site BarberShop" Margin="180,55,0,329" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Width="420"/>
+        <Label Content="la première appli dédié aux personnes qui n'aiment pas se prendre la tête" Margin="179,119,0,287" HorizontalAlignment="Left" FontWeight="Bold" Width="423"/>
+        <Button Content="Accéder au formulaire client" Margin="180,229,461,159" Click="Button_Click_Client"/>
+        <Button Content="Accéder au formulaire coiffeur" Margin="405,229,200,159" Click="Button_Click_Coiffeur"/>
 
 
     </Grid>

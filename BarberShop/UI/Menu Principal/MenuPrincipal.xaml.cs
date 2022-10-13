@@ -26,13 +26,13 @@ namespace BarberShop.UI.Menu_Principal
             InitializeComponent();
         }
 
-        private void Button_Click_Client(object sender, RoutedEventArgs e)
+        public void Button_Click_Client(object sender, RoutedEventArgs e)
         {
             FrmGEstionClient formGestClient = new FrmGEstionClient();
             formGestClient.Show();
         }
 
-        private void Button_Click_Coiffeur(object sender, RoutedEventArgs e)
+        public void Button_Click_Coiffeur(object sender, RoutedEventArgs e)
         {
             FrmGestionCoiffeur formGestCoiffeur = new FrmGestionCoiffeur();
             formGestCoiffeur.Show();

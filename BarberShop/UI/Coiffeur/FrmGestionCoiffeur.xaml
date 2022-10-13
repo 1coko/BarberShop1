@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="FrmGestionCoiffeur" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="gridClients"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,87,48,0" Height="311" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="gridCoiffeur"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,87,48,0" Height="311" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header=" Nom" Width="2*" Binding="{Binding Nom}"/>
                 <DataGridTextColumn Header=" Prenom" Width="2*" Binding="{Binding Prenom}"/>

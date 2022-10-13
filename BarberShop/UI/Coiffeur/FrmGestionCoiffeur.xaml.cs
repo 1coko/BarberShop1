@@ -52,7 +52,7 @@ namespace BarberShop.UI.Coiffeur
 
 
             // Passer a la grille la liste des donnees a afficher
-            gridClients.ItemsSource = itemSource;
+            gridCoiffeur.ItemsSource = itemSource;
         
         }
 
