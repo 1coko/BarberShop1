@@ -32,28 +32,19 @@ namespace BarberShop.UI.Coiffeur
         // Evenement Loaded a faire sur l'ensmble de la fenetre Window du fichier WPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // Remplir la grille 
+            MessageBox.Show("" +DateTime.MinValue);
 
-            // rafrichir la grille
-
-            //gridClients.Items.Refresh();   // a chercher 
-
-            //On recupere les donnees de la BD
-
-            //Modeles.Coiffeur coiffeur = new Modeles.Coiffeur();
-            //List<Modeles.Coiffeur> resultat = Coiffeur.Select(); 
-            //itemSource.Clear();
-
-            // On affiche chaque ligne recuperée dans la grille 
-
-            //foreach (var item in resultat)
-            //{
-            //    itemSource.Add(item);
-            //}
-
-
-            // Passer a la grille la liste des donnees a afficher
+            // Recuperer la liste des coiffeurs depuis la BD 
+            Modeles.Coiffeur coiffeur = new Modeles.Coiffeur();
+            List<Modeles.Coiffeur> resultatBD = coiffeur.Afficher();
+            // Faire une boucle pour remplir notre variable itemsource (la collection qui sera passé plus tard a l'ItemSource de la grille
+            foreach (var chaqueCoiffeur in resultatBD)
+            {
+                itemSource.Add(chaqueCoiffeur);
+            }
+            // Affecté l itemsource a la propriete ItemSource de la grille
             gridCoiffeur.ItemsSource = itemSource;
-        
         }
 
         public void btnAjoutCoiffeur_Click(object sender, RoutedEventArgs e)

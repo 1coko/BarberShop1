@@ -19,6 +19,10 @@ namespace BarberShop.Modeles
         public string Email { get; set; }
         public string AdressePostale { get; set; }
 
+        public Coiffeur()
+        {
+
+        }
 
         //Constructeur
         public Coiffeur(int idCoiffeur, string nom, string prenom, DateTime dateDeNaissance, char sexe, string telephone, string email, string adressePostale)
@@ -67,18 +71,71 @@ namespace BarberShop.Modeles
 
 
 
+        //public List<Coiffeur> Afficher()
+        //{
+        //    SqlConnection con = null;
+        //    List<Coiffeur> liste = new List<Coiffeur>();
+        //    try
+        //    {
+        //        // Creation de la connexion  
+        //        con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
+        //        // la requete sql  
+
+        //        string requete = string.Format("select * from Coiffeur where IdCoiffeur = {0})", IdCoiffeur);
+
+        //        SqlCommand cm = new SqlCommand(requete, con);
+        //        // Ouvrir la connexion  
+        //        con.Open();
+        //        //  Executer la requete   
+        //        SqlDataReader sdr = cm.ExecuteReader();
+        //        // Iterating Data  
+        //        while (sdr.Read())
+        //        {
+        //            int idCoiffeur = int.Parse(sdr["IdCoiffeur"].ToString());
+        //            string nom = sdr["Nom"].ToString();
+        //            string prenom = sdr["Prenom"].ToString();
+        //            DateTime dateDeNaissance = DateTime.Parse(sdr["DateDeNaissance"].ToString());
+        //            char sexe = char.Parse(sdr["Sexe"].ToString());
+        //            string telephone = sdr["Telephone"].ToString();
+        //            string Email = sdr["AdresseMail"].ToString();
+        //            string adressePostale = sdr["AdressePostale"].ToString();
+
+
+
+        //            Coiffeur cf = new Coiffeur(idCoiffeur, nom, prenom, dateDeNaissance, sexe, telephone, Email, adressePostale);
+        //            liste.Add(cf);
+        //        }
+
+        //        Console.WriteLine("Succes");
+
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine("OOPs, Erreur." + e);
+        //    }
+        //    //Fermer la connexion  
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+
+        //    return liste;
+        //}
+
         public List<Coiffeur> Afficher()
         {
-            SqlConnection con = null;
+            SqlConnection con = null;  // declaration de l'objet qui fait la connexion avec la BD
             List<Coiffeur> liste = new List<Coiffeur>();
             try
             {
-                // Creation de la connexion  
+                // Creation de l'objet de la connexion avec la chaine de connexion en parametre 
+
                 con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
                 // la requete sql  
 
-                string requete = string.Format("select * from Coiffeur where IdCoiffeur = {0})", IdCoiffeur);
+                string requete = "select * from Coiffeur";
 
+                // Permet de gerer la requete 
                 SqlCommand cm = new SqlCommand(requete, con);
                 // Ouvrir la connexion  
                 con.Open();
@@ -90,11 +147,20 @@ namespace BarberShop.Modeles
                     int idCoiffeur = int.Parse(sdr["IdCoiffeur"].ToString());
                     string nom = sdr["Nom"].ToString();
                     string prenom = sdr["Prenom"].ToString();
-                    DateTime dateDeNaissance = DateTime.Parse(sdr["DateDeNaissance"].ToString());
+                    DateTime dateDeNaissance = DateTime.MinValue;
+                    if (!sdr.IsDBNull(6))
+                         dateDeNaissance = DateTime.Parse(sdr["DateDeNaissance"].ToString());
+                    else
+                        dateDeNaissance = DateTime.MinValue;
+
                     char sexe = char.Parse(sdr["Sexe"].ToString());
                     string telephone = sdr["Telephone"].ToString();
-                    string Email = sdr["AdresseMail"].ToString();
-                    string adressePostale = sdr["AdressePostale"].ToString();
+                    string Email = sdr["Email"].ToString();
+                    string adressePostale = String.Empty;
+                    if (!sdr.IsDBNull(5))
+                        adressePostale = sdr["AdressePostale"].ToString();
+                    else
+                        adressePostale = null;
 
 
 
@@ -107,7 +173,7 @@ namespace BarberShop.Modeles
             }
             catch (Exception e)
             {
-                Console.WriteLine("OOPs, Erreur." + e);
+                Console.WriteLine("OOPs, Erreur." + e.Message);
             }
             //Fermer la connexion  
             finally
