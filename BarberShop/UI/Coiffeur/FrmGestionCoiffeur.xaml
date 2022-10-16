@@ -31,7 +31,7 @@
         </Button>
         <TextBox x:Name="txtRechercheCoiffeur" HorizontalAlignment="Left" Margin="118,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" KeyDown="txtRechercheCoiffeur_KeyDown"/>
         <Label Content="Rechercher" HorizontalAlignment="Left" Margin="45,61,0,0" VerticalAlignment="Top" Width="69"/>
-        <Button x:Name="btnUpdateCoiffeur" Content="Update" HorizontalAlignment="Left" Margin="665,54,0,0" VerticalAlignment="Top" Width="87" Click="btnUpdateCoiffeur_Click"/>
+        <Button x:Name="btnModifierCoiffeur" Content="Modifier" HorizontalAlignment="Left" Margin="665,54,0,0" VerticalAlignment="Top" Width="87" Click="btnModifierCoiffeur_Click"/>
         <Button x:Name="btnRefreshCoiffeur" Content="Refresh" HorizontalAlignment="Left" Margin="366,54,0,0" VerticalAlignment="Top" Width="82" Click="btnRefreshCoiffeur_Click"/>
 
     </Grid>

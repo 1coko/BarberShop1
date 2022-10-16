@@ -184,5 +184,63 @@ namespace BarberShop.Modeles
             return liste;
         }
 
+
+        public void Modifier()
+        {
+            SqlConnection con = null;
+            try
+            {
+                // Creation de la connexion  
+                con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
+                // la requete sql  
+
+                string requete = string.Format("UPDATE Coiffeur SET Nom = '{0}', Prenom = '{1}', DatedeNaissance = '{2}', Sexe = '{3}', Telephone = '{4}', Email = '{5}', AdressePostale = '{6}' WHERE IdCoiffeur = {7}", Nom, Prenom, DateDeNaissance, Sexe, Telephone, Email, AdressePostale, IdCoiffeur);
+
+                SqlCommand cm = new SqlCommand(requete, con);
+                // Ouvrir la connexion  
+                con.Open();
+                // Executer la requete  
+                cm.ExecuteNonQuery();
+                Console.WriteLine("Ligne updatée");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs,Erreur" + e);
+            }
+            // Fermer la connexion  
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void Supprimer()
+        {
+            SqlConnection con = null;
+            try
+            {
+                // Creation de la connexion  
+                con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
+                // la requete sql  
+
+                string requete = string.Format("DELETE FROM Coiffeur WHERE IdCoiffeur = {0}", IdCoiffeur);
+
+                SqlCommand cm = new SqlCommand(requete, con);
+                // Ouvrir la connexion  
+                con.Open();
+                // Executer la requete  
+                cm.ExecuteNonQuery();
+                Console.WriteLine("Ligne suprimée");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs,Erreur" + e);
+            }
+            // Fermer la connexion  
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
