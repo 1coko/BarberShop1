@@ -113,6 +113,7 @@ namespace BarberShop.UI.Coiffeur
                     // Recuperer la liste des coiffeurs depuis la BD 
                     Modeles.Coiffeur coiffeur = new Modeles.Coiffeur();
                     List<Modeles.Coiffeur> resultatBD = coiffeur.Afficher();
+                    itemSource.Clear();
                     // Faire une boucle pour remplir notre variable itemsource (la collection qui sera passé plus tard a l'ItemSource de la grille
                     foreach (var chaqueCoiffeur in resultatBD)
                     {
@@ -125,7 +126,7 @@ namespace BarberShop.UI.Coiffeur
             }
             else
             {
-                MessageBox.Show("Séelectionnez une ligne svp !", "ATTENTION", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Sélectionnez une ligne svp !", "ATTENTION", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
 
@@ -133,12 +134,41 @@ namespace BarberShop.UI.Coiffeur
 
         public void btnRefreshCoiffeur_Click(object sender, RoutedEventArgs e)
         {
+            //// Remplir la grille 
+            //MessageBox.Show("" +DateTime.MinValue);
 
+            // Recuperer la liste des coiffeurs depuis la BD 
+            Modeles.Coiffeur coiffeur = new Modeles.Coiffeur();
+            List<Modeles.Coiffeur> resultatBD = coiffeur.Afficher();
+            itemSource.Clear();
+            // Faire une boucle pour remplir notre variable itemsource (la collection qui sera passé plus tard a l'ItemSource de la grille
+            foreach (var chaqueCoiffeur in resultatBD)
+            {
+                itemSource.Add(chaqueCoiffeur);
+            }
+            // Affecté l itemsource a la propriete ItemSource de la grille
+            gridCoiffeur.ItemsSource = itemSource;
         }
 
         public void txtRechercheCoiffeur_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Enter)
+            {
+                // Rechercher 
+                Modeles.Coiffeur coiffeur = new Modeles.Coiffeur();
+                List<Modeles.Coiffeur> resultat = coiffeur.Rechercher(txtRechercheCoiffeur.Text);
 
+                itemSource.Clear();
+                // On affiche chaque ligne recuperée dans la grille 
+
+                foreach (var item in resultat)
+                {
+                    itemSource.Add(item);
+                }
+
+                // Passer a la grille la liste des donnees a afficher
+                gridCoiffeur.ItemsSource = itemSource;
+            }
         }
     }
 }

@@ -22,6 +22,7 @@
         <Label Content="Email *" HorizontalAlignment="Left" Margin="238,197,0,0" VerticalAlignment="Top"/>
         <Label Content="Adresse postale " HorizontalAlignment="Left" Margin="238,220,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="550,284,0,0" VerticalAlignment="Top" Width="81" Click="btnAjouterCoiffeur_Click"/>
+        <Button x:Name="btnAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="392,284,0,0" VerticalAlignment="Top" Width="81" Click="btnAnnuler_Click"/>
         <Label Content="AJOUT D'UN COIFFEUR" HorizontalAlignment="Left" Margin="167,28,0,0" VerticalAlignment="Top" Width="435"/>
     </Grid>
 </Window>

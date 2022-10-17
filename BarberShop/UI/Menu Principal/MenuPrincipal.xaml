@@ -10,8 +10,17 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Bienvenue sur votre site BarberShop" Margin="180,55,0,329" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Width="420"/>
-        <Label Content="la première appli dédié aux personnes qui n'aiment pas se prendre la tête" Margin="179,119,0,287" HorizontalAlignment="Left" FontWeight="Bold" Width="423"/>
+        <Label Content="Bienvenue sur votre site BarberShop" Margin="180,55,0,301" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Width="420"/>
+        <Label Content="la première appli dédié aux personnes qui n'aiment pas se prendre la tête" Margin="180,95,0,282" HorizontalAlignment="Left" FontWeight="Bold" Width="423" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="3.809"/>
+                    <RotateTransform Angle="0.536"/>
+                    <TranslateTransform X="0.933"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
         <Button Content="Accéder au formulaire client" Margin="180,229,461,159" Click="Button_Click_Client"/>
         <Button Content="Accéder au formulaire coiffeur" Margin="405,229,200,159" Click="Button_Click_Coiffeur"/>
 

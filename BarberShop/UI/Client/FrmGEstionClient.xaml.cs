@@ -153,5 +153,29 @@ namespace BarberShop.UI.Client
                 gridClients.ItemsSource = itemSource;
             }
         }
+
+        private void btnReservation_Click(object sender, RoutedEventArgs e)
+        {
+            // verifier si un client est selectionné dans la grille 
+            Modeles.Client clientSelectionnee = gridClients.SelectedItem as Modeles.Client;
+
+            if (clientSelectionnee != null)
+            {
+                // Affiche la fenetre 
+                frmReservationClient fenetreUpdate = new frmReservationClient();
+                frmReservationClient.ClientReservation = clientSelectionnee;
+                if (fenetreUpdate.ShowDialog() == true)
+                {
+                    RemplirGrille();
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Séelectionnez une ligne svp !", "ATTENTION", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+
+        }
     }
 }

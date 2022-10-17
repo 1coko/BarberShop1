@@ -22,6 +22,7 @@
         <Label Content="Email" HorizontalAlignment="Left" Margin="238,197,0,0" VerticalAlignment="Top"/>
         <Label Content="Adresse postale " HorizontalAlignment="Left" Margin="238,220,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnValider" Content="valider" HorizontalAlignment="Left" Margin="506,284,0,0" VerticalAlignment="Top" Width="81" Click="btnValider_Click"/>
+        <Button x:Name="btnAnnulerr" Content="annuler" HorizontalAlignment="Left" Margin="392,284,0,0" VerticalAlignment="Top" Width="81" Click="btnAnnulerr_Click"/>
         <Label Content="AJOUT D'UN CLIENT" HorizontalAlignment="Left" Margin="167,28,0,0" VerticalAlignment="Top" Width="435"/>
 
     </Grid>

@@ -21,7 +21,7 @@ namespace BarberShop.Modeles
 
         public Coiffeur()
         {
-
+            
         }
 
         //Constructeur
@@ -71,56 +71,45 @@ namespace BarberShop.Modeles
 
 
 
-        //public List<Coiffeur> Afficher()
-        //{
-        //    SqlConnection con = null;
-        //    List<Coiffeur> liste = new List<Coiffeur>();
-        //    try
-        //    {
-        //        // Creation de la connexion  
-        //        con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
-        //        // la requete sql  
+        public static int ObtenirIdApartirDuNom(string nom)
+        {
+            int idCoiffeurAffiche = 0;
+            SqlConnection con = null;
+            List<Coiffeur> liste = new List<Coiffeur>();
+            try
+            {
+                // Creation de la connexion  
+                con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
+                // la requete sql  
 
-        //        string requete = string.Format("select * from Coiffeur where IdCoiffeur = {0})", IdCoiffeur);
+                string requete = string.Format("select * from Coiffeur where Nom = {0})", nom);
 
-        //        SqlCommand cm = new SqlCommand(requete, con);
-        //        // Ouvrir la connexion  
-        //        con.Open();
-        //        //  Executer la requete   
-        //        SqlDataReader sdr = cm.ExecuteReader();
-        //        // Iterating Data  
-        //        while (sdr.Read())
-        //        {
-        //            int idCoiffeur = int.Parse(sdr["IdCoiffeur"].ToString());
-        //            string nom = sdr["Nom"].ToString();
-        //            string prenom = sdr["Prenom"].ToString();
-        //            DateTime dateDeNaissance = DateTime.Parse(sdr["DateDeNaissance"].ToString());
-        //            char sexe = char.Parse(sdr["Sexe"].ToString());
-        //            string telephone = sdr["Telephone"].ToString();
-        //            string Email = sdr["AdresseMail"].ToString();
-        //            string adressePostale = sdr["AdressePostale"].ToString();
+                SqlCommand cm = new SqlCommand(requete, con);
+                // Ouvrir la connexion  
+                con.Open();
+                //  Executer la requete   
+                SqlDataReader sdr = cm.ExecuteReader();
+                // Iterating Data  
+                while (sdr.Read())
+                {
+                    idCoiffeurAffiche = int.Parse(sdr["IdCoiffeur"].ToString());
+                }
 
+                Console.WriteLine("Succes");
 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, Erreur." + e);
+            }
+            //Fermer la connexion  
+            finally
+            {
+                con.Close();
+            }
 
-        //            Coiffeur cf = new Coiffeur(idCoiffeur, nom, prenom, dateDeNaissance, sexe, telephone, Email, adressePostale);
-        //            liste.Add(cf);
-        //        }
-
-        //        Console.WriteLine("Succes");
-
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine("OOPs, Erreur." + e);
-        //    }
-        //    //Fermer la connexion  
-        //    finally
-        //    {
-        //        con.Close();
-        //    }
-
-        //    return liste;
-        //}
+            return idCoiffeurAffiche;
+        }
 
         public List<Coiffeur> Afficher()
         {
@@ -241,6 +230,73 @@ namespace BarberShop.Modeles
             {
                 con.Close();
             }
+        }
+
+        public List<Coiffeur> Rechercher(string critereDeRecherche)
+        {
+            SqlConnection con = null;
+            List<Coiffeur> liste = new List<Coiffeur>();
+            try
+            {
+                // Creation de la connexion 
+                con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
+
+                // la requete sql  
+
+                string requete = string.Format("select * from Coiffeur where Nom like '%{0}%' or Email like '%{0}%'", critereDeRecherche);
+
+                SqlCommand cm = new SqlCommand(requete, con);
+                //  Ouvrir la connexion  
+                con.Open();
+                //  Executer la requete   
+                SqlDataReader sdr = cm.ExecuteReader();
+                // Iterating Data  
+                while (sdr.Read())
+                {
+                    int idCoiffeur = int.Parse(sdr["IdCoiffeur"].ToString());
+                    string nom = sdr["Nom"].ToString();
+                    string prenom = sdr["Prenom"].ToString();
+                    DateTime dateDeNaissance = DateTime.MinValue;
+                    if (!sdr.IsDBNull(6))
+                        dateDeNaissance = DateTime.Parse(sdr["DateDeNaissance"].ToString());
+                    else
+                        dateDeNaissance = DateTime.MinValue;
+
+                    char sexe = char.Parse(sdr["Sexe"].ToString());
+                    string telephone = sdr["Telephone"].ToString();
+                    string Email = sdr["Email"].ToString();
+                    string adressePostale = String.Empty;
+
+
+                    Coiffeur cof = new Coiffeur(idCoiffeur, nom, prenom, dateDeNaissance, sexe, telephone, Email, adressePostale);
+                    liste.Add(cof);
+                }
+
+                Console.WriteLine("Succes");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, Erreur." + e);
+            }
+            //Fermer la connexion  
+            finally
+            {
+                con.Close();
+            }
+
+            return liste;
+        }
+
+        public static decimal CalculSomme()
+        {
+            decimal somme = 2 + 2;
+            return somme;
+        }
+
+        public static decimal CalculPerinetre(int rayon)
+        {
+            return rayon * rayon;
         }
     }
 }

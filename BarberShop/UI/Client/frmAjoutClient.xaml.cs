@@ -51,5 +51,10 @@ namespace BarberShop.UI.Client
             // Sinon on affiche un messageBox pour dire a l'utilsateur de remplir les champs necessaires
 
         }
+
+        private void btnAnnulerr_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop.UI.Client"
         mc:Ignorable="d"
-        Title="FrmGEstionClient" Height="444" Width="800" Loaded="Window_Loaded">
+        Title="FrmGEstionClient" Height="449" Width="883" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="gridClients"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,87,48,0" Height="311" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="gridClients"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,87,131,0" Height="311" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header=" Nom" Width="2*" Binding="{Binding Nom}"/>
                 <DataGridTextColumn Header="Email" Width="2*" Binding="{Binding Mail }"/>
@@ -29,6 +29,7 @@
         <Label Content="Rechercher" HorizontalAlignment="Left" Margin="45,61,0,0" VerticalAlignment="Top" Width="69"/>
         <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="665,54,0,0" VerticalAlignment="Top" Width="87" Click="btnUpdate_Click"/>
         <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="366,54,0,0" VerticalAlignment="Top" Width="82" Click="btnRefresh_Click"/>
+        <Button x:Name="btnReservation"  Content="Reservation" HorizontalAlignment="Left" Margin="774,106,0,0" VerticalAlignment="Top" Width="99" Click="btnReservation_Click"/>
 
     </Grid>
 </Window>
