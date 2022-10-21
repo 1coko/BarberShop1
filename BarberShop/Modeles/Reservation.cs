@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarberShop.ModelesAffichage;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -131,54 +132,48 @@ namespace BarberShop.Modeles
             //}
         }
 
-        public List<Client> Select()
+        public List<MACOnsulationReservation> Select()
         {
-            //SqlConnection con = null;
-            //List<Client> liste = new List<Client>();
-            //try
-            //{
-            //    // Creation de la connexion 
-            //    con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
+            SqlConnection con = null;
+            List<MACOnsulationReservation> liste = new List<MACOnsulationReservation>();
+            try
+            {
+                // Creation de la connexion 
+                con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
 
-            //    // la requete sql  
-            //    SqlCommand cm = new SqlCommand("SELECT * FROM Client ", con);
-            //    //  Ouvrir la connexion  
-            //    con.Open();
-            //    //  Executer la requete   
-            //    SqlDataReader sdr = cm.ExecuteReader();
-            //    // Iterating Data  
-            //    while (sdr.Read())
-            //    {
-            //        int id = int.Parse(sdr["IdClient"].ToString());
-            //        string nom = sdr["Nom"].ToString();
-            //        string prenom = sdr["Prenom"].ToString();
-            //        DateTime dateNaiss = DateTime.Parse(sdr["DateDeNaissance"].ToString());
-            //        char sex = char.Parse(sdr["Sex"].ToString());
-            //        string tel = sdr["Telephone"].ToString();
-            //        string mail = sdr["AdresseMail"].ToString();
-            //        string adr = sdr["AdressePostale"].ToString();
+                // la requete sql  
+                SqlCommand cm = new SqlCommand("select c.Nom NomCoiffeur, b.DateReservation, b.HeureReservation,  a.Nom Nomclient, a.Telephone\r\nfrom Client a\r\njoin Reservation b on a.IdClient = b.IdClient \r\njoin Coiffeur c on b.IdCoiffeur = c.IdCoiffeur where DateReservation >=  CONVERT(varchar, GETDATE(),23)", con);
+                //  Ouvrir la connexion  
+                con.Open();
+                //  Executer la requete   
+                SqlDataReader sdr = cm.ExecuteReader();
+                // Iterating Data  
+                while (sdr.Read())
+                {
+                    string nomCoiffeur =sdr["NomCoiffeur"].ToString();
+                    string dateReserv =sdr["DateReservation"].ToString();
+                    string heurereserv = sdr["HeureReservation"].ToString();
+                    string nomClient = sdr["NomClient"].ToString();
+                    string telClient = sdr["Telephone"].ToString();
 
+                    MACOnsulationReservation ma = new MACOnsulationReservation(nomCoiffeur, dateReserv, heurereserv, nomClient, telClient);
+                    liste.Add(ma);
+                }
 
+                Console.WriteLine("Succes");
 
-            //        Client cl = new Client(id, nom, prenom, dateNaiss, sex, tel, mail, adr);
-            //        liste.Add(cl);
-            //    }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, Erreur." + e);
+            }
+            //Fermer la connexion  
+            finally
+            {
+                con.Close();
+            }
 
-            //    Console.WriteLine("Succes");
-
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine("OOPs, Erreur." + e);
-            //}
-            ////Fermer la connexion  
-            //finally
-            //{
-            //    con.Close();
-            //}
-
-            //return liste;
-            return null;
+            return liste;
         }
 
         // Rechercher la liste des clients
@@ -235,14 +230,44 @@ namespace BarberShop.Modeles
             return null;
         }
 
-        public void controleRdv (int idCoiffeur, DateTime datereservation, string heurreservation)
+        public bool controleRdv (int idCoiffeur, string datereservation, string heurereservation)
         {
-            string rdvDejaPris = string.Format("select * FROM reservation WHERE IdCoiffeur = {0}, DateReservation = '{1}', HeureReservation = '{2}'", IdCoiffeur, DateReservation, HeureReservation);
+            string requeteRdvDejaPris = string.Format("select * FROM reservation WHERE IdCoiffeur = {0} and DateReservation = '{1}' and HeureReservation = '{2}'", idCoiffeur, datereservation, heurereservation);
+            bool resultat = false;
 
-            if (int.Parse.IdCoiffeur.rdvDejaPris == )
+            // executer la requete et ensuite retourner vrai ou faux en fonction du resultat.
+            SqlConnection con = null;
+            List<Client> liste = new List<Client>();
+            try
             {
+                // Creation de la connexion 
+                con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
+
+                // la requete sql  
+                SqlCommand cm = new SqlCommand(requeteRdvDejaPris, con);
+                //  Ouvrir la connexion  
+                con.Open();
+                //  Executer la requete   
+                SqlDataReader sdr = cm.ExecuteReader();
+                // Iterating Data  
+                while (sdr.Read())
+                {
+                    resultat = true;
+                }
 
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("OOPs, Erreur." + e);
+            }
+            //Fermer la connexion  
+            finally
+            {
+                con.Close();
+            }
+
+
+            return resultat;
 
         }
 

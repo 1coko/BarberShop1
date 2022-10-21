@@ -74,48 +74,52 @@ namespace BarberShop.UI.Client
                     // Verifier si la date de reservation n'est pas inferieure a la date du jour 
 
                     //date du jour en c sharp : DateTime.Now
-                    if (dateReservation.SelectedDate < DateTime.Now)
+                    if (dateReservation.SelectedDate.Value.Date < DateTime.Now.Date)
                     {
                         MessageBox.Show("Merci de selectionner une \"Date de reservation\" suppérieur ou égale à la date jour", "MESSAGE", MessageBoxButton.OK, MessageBoxImage.Stop);
                     }
-                    else if (dateReservation.SelectedDate >= DateTime.Now)
+                    else 
                     {
                         // appeler une fonction qui prend en parametre le nom du coiffeur et nous retourne l'id corrspondant dans la BD
 
                         idCoiffeurDepuislaBD = Modeles.Coiffeur.ObtenirIdApartirDuNom(coiffeurSelectionne);
+
+                  
+
+
                         // creer l'objet reservation avec les infos du formulaire 
                         //string heureMinutes = txtHeure.Text + ":" + txtMinutes.Text;
                         string heureMinutes = string.Format("{0}:{1}", txtHeure.Text, txtMinutes.Text);
                         Reservation reserv = new Reservation(0, ClientReservation.Id, idCoiffeurDepuislaBD, dateReservation.SelectedDate.Value, heureMinutes);
 
-                        // enregistrer dans la base
 
-                        reserv.Insert();
+                        // verifier si ce coiffeur a un rdv a cette periode 
 
-                        // afficher un message box pour notifier l'utilisateur de la reservation
+                        bool resulatDeVerification = reserv.controleRdv(idCoiffeurDepuislaBD, dateReservation.SelectedDate.Value.ToString("yyyy-MM-dd"), heureMinutes);
 
-                        string messageAEnvoyer = "Bonjour," + ClientReservation.Nom + "\n Votre reservation du : " + dateReservation.SelectedDate + "à" + heureMinutes + "H, a bien été enregistrée.\n A très bientôt dans votre salon.";
-                        MessageBox.Show(messageAEnvoyer);
+                        if(resulatDeVerification == false)
+                        {
+                            // enregistrer dans la base
+
+                            reserv.Insert();
+
+                            // afficher un message box pour notifier l'utilisateur de la reservation
+
+                            string messageAEnvoyer = "Bonjour," + ClientReservation.Nom + "\n Votre reservation du : " + dateReservation.SelectedDate + "à" + heureMinutes + "H, a bien été enregistrée.\n A très bientôt dans votre salon.";
+                            MessageBox.Show(messageAEnvoyer);
 
 
-                        // Envoie un courriel 
-                        MailMessage message = new MailMessage();
-                        SmtpClient smtp = new SmtpClient();
-                        message.From = new MailAddress("bmask6539@gmail.com");
-                        message.To.Add(new MailAddress(ClientReservation.Mail));
-                        message.Subject = "CONFIRMATION DE RDV";
-                        message.IsBodyHtml = true; //to make message body as html  
-                        message.Body = messageAEnvoyer;
-                        smtp.Port = 587;
-                        smtp.Host = "smtp.gmail.com"; //for gmail host  
-                        smtp.EnableSsl = true;
-                        smtp.UseDefaultCredentials = true;
-                        smtp.Credentials = new NetworkCredential("bmask6539@gmail.com", "blackmask6539");
-                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        smtp.Send(message);
-                        //Utilitaires.EnvoyerEmail(messageAEnvoyer,ClientReservation.Mail);
+                            // Envoie un courriel 
 
-                        this.Close();
+                            //Utilitaires.EnvoyerEmail(messageAEnvoyer,ClientReservation.Mail);
+
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Merci de selectionner un autre creneau horaire !", "MESSAGE", MessageBoxButton.OK, MessageBoxImage.Stop);
+                        }
+                       
 
                     }
                 }

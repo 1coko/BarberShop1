@@ -1,5 +1,6 @@
 ﻿using BarberShop.UI.Client;
 using BarberShop.UI.Coiffeur;
+using BarberShop.UI.ConsulterReservation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,12 @@ namespace BarberShop.UI.Menu_Principal
         {
             FrmGestionCoiffeur formGestCoiffeur = new FrmGestionCoiffeur();
             formGestCoiffeur.Show();
+        }
+
+        private void btnConsulterReservation_Click(object sender, RoutedEventArgs e)
+        {
+            frmConsultationReservation formConsultResa= new frmConsultationReservation();
+            formConsultResa.Show();
         }
     }
 }

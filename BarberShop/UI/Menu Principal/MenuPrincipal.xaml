@@ -23,6 +23,7 @@
         </Label>
         <Button Content="Accéder au formulaire client" Margin="180,229,447,159" Click="Button_Click_Client"/>
         <Button Content="Accéder au formulaire coiffeur" Margin="413,229,200,159" Click="Button_Click_Coiffeur"/>
+        <Button x:Name ="btnConsulterReservation" Content="Consulter les reservations" Margin="413,298,200,90" Click="btnConsulterReservation_Click"/>
 
 
     </Grid>
