@@ -53,7 +53,7 @@ namespace BarberShop.Modeles
                 // la requete sql  
                 
                 string requete = string.Format("INSERT INTO Client (Nom, Prenom, DateDeNaissance, Sex, Telephone, AdresseMail, AdressePostale) " +
-                    "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", Nom, Prenom, DateDeNaissance, Sex, Telephone,Mail, AdressePostale);
+                    "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", Nom, Prenom, DateDeNaissance.ToString("yyyy-MM-dd"), Sex, Telephone,Mail, AdressePostale);
 
                 SqlCommand cm = new SqlCommand(requete, con);
                 // Ouvrir la connexion  

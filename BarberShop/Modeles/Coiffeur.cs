@@ -82,7 +82,7 @@ namespace BarberShop.Modeles
                 con = new SqlConnection("data source=51.79.69.136,1433; database=BarberShop; User ID = rock; Password = M0t2p@$$e");
                 // la requete sql  
 
-                string requete = string.Format("select * from Coiffeur where Nom = {0})", nom);
+                string requete = string.Format("select * from Coiffeur where Nom = '{0}'", nom);
 
                 SqlCommand cm = new SqlCommand(requete, con);
                 // Ouvrir la connexion  

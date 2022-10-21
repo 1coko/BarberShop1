@@ -21,8 +21,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button Content="Accéder au formulaire client" Margin="180,229,461,159" Click="Button_Click_Client"/>
-        <Button Content="Accéder au formulaire coiffeur" Margin="405,229,200,159" Click="Button_Click_Coiffeur"/>
+        <Button Content="Accéder au formulaire client" Margin="180,229,447,159" Click="Button_Click_Client"/>
+        <Button Content="Accéder au formulaire coiffeur" Margin="413,229,200,159" Click="Button_Click_Coiffeur"/>
 
 
     </Grid>

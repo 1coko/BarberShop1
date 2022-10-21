@@ -162,9 +162,9 @@ namespace BarberShop.UI.Client
             if (clientSelectionnee != null)
             {
                 // Affiche la fenetre 
-                frmReservationClient fenetreUpdate = new frmReservationClient();
+                frmReservationClient fenetreReserve = new frmReservationClient();
                 frmReservationClient.ClientReservation = clientSelectionnee;
-                if (fenetreUpdate.ShowDialog() == true)
+                if (fenetreReserve.ShowDialog() == true)
                 {
                     RemplirGrille();
                     

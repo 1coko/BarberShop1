@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop.UI.Client"
         mc:Ignorable="d"
-         Title="MODIFIER" Height="450" Width="800" Loaded="Window_Loaded">
+         Title="frmReservationClient" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="201*"/>
@@ -15,17 +15,18 @@
         <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="331,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.ColumnSpan="2"/>
         <Label Content="Nom : " HorizontalAlignment="Left" Margin="238,61,0,0" VerticalAlignment="Top"/>
         <Label Content="Prénom(s)" HorizontalAlignment="Left" Margin="238,92,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnValider" Content="valider" HorizontalAlignment="Left" Margin="104,292,0,0" VerticalAlignment="Top" Width="81" Click="btnValider_Click" Grid.Column="1"/>
+        <Button x:Name="btnReserver" Content="Reserver" HorizontalAlignment="Left" Margin="104,292,0,0" VerticalAlignment="Top" Width="81" Click="btnReserver_Click" Grid.Column="1"/>
         <Label Content="RESERVATION D'UN CLIENT" HorizontalAlignment="Left" Margin="167,28,0,0" VerticalAlignment="Top" Width="435" Grid.ColumnSpan="2"/>
         <Label Content="Coiffeur cible " HorizontalAlignment="Left" Margin="238,149,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbCoiffeur" HorizontalAlignment="Left" Margin="331,149,0,0" VerticalAlignment="Top" Width="256" Grid.ColumnSpan="2"/>
         <Label Content="Date de reservation" HorizontalAlignment="Left" Margin="210,198,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="333,200,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="254"/>
+        <DatePicker x:Name="dateReservation" HorizontalAlignment="Left" Margin="333,200,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="254"/>
         <TextBox x:Name="txtHeure" Grid.Column="1" HorizontalAlignment="Left" Margin="49,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40" TextChanged="TextBox_TextChanged"/>
         <Label Content="Heure de reservation" HorizontalAlignment="Left" Margin="203,247,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtMinutes" Grid.Column="1" HorizontalAlignment="Left" Margin="123,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40" TextChanged="TextBox_TextChanged"/>
         <Label Grid.Column="1" Content="H" HorizontalAlignment="Left" Margin="86,248,0,0" VerticalAlignment="Top"/>
         <Label Grid.Column="1" Content="Min" HorizontalAlignment="Left" Margin="161,248,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Annuler" Content="Annuler" HorizontalAlignment="Left" Margin="334,292,0,0" VerticalAlignment="Top" Width="81" Grid.ColumnSpan="2" Click="Annuler_Click"/>
 
     </Grid>
 </Window>

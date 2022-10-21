@@ -24,6 +24,7 @@
         <Button x:Name="btnValider" Content="valider" HorizontalAlignment="Left" Margin="506,284,0,0" VerticalAlignment="Top" Width="81" Click="btnValider_Click"/>
         <Label Content="MODIFICATION D'UN CLIENT" HorizontalAlignment="Left" Margin="167,28,0,0" VerticalAlignment="Top" Width="435"/>
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="497,247,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90" IsEnabled="False"/>
+        <Button x:Name="btnAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="364,284,0,0" VerticalAlignment="Top" Width="81" Click="btnAnnuler_Click"/>
 
     </Grid>
 </Window>

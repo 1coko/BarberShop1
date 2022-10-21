@@ -32,6 +32,17 @@ namespace BarberShop.Modeles
 
         }
 
+        public Reservation(int id, int idclient, int idcoiffeur, DateTime datereservation, string heure)
+        {
+            Id = id;
+            IdClient = idclient;
+            IdCoiffeur = idcoiffeur;
+            DateReservation = datereservation;
+            HeureReservation = heure;
+            ChampSupprime = false;
+
+        }
+
         public void Insert()
         {
             SqlConnection con = null;
@@ -42,7 +53,7 @@ namespace BarberShop.Modeles
                 // la requete sql  
 
                 string requete = string.Format("insert into Reservation (IdClient, IdCoiffeur, DateReservation, HeureReservation ) " +
-                    "VALUES ('{0}','{1}','{2}','{3}')", IdClient, IdCoiffeur, DateReservation, HeureReservation);
+                    "VALUES ('{0}','{1}','{2}','{3}')", IdClient, IdCoiffeur, DateReservation.ToString("yyyy-MM-dd"), HeureReservation);
 
                 SqlCommand cm = new SqlCommand(requete, con);
                 // Ouvrir la connexion  
@@ -223,5 +234,17 @@ namespace BarberShop.Modeles
             //return liste;
             return null;
         }
+
+        public void controleRdv (int idCoiffeur, DateTime datereservation, string heurreservation)
+        {
+            string rdvDejaPris = string.Format("select * FROM reservation WHERE IdCoiffeur = {0}, DateReservation = '{1}', HeureReservation = '{2}'", IdCoiffeur, DateReservation, HeureReservation);
+
+            if (int.Parse.IdCoiffeur.rdvDejaPris == )
+            {
+
+            }
+
+        }
+
     }
 }
