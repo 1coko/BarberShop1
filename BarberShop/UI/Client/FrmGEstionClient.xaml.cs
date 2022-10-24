@@ -35,7 +35,7 @@ namespace BarberShop.UI.Client
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             RemplirGrille();
-
+            txtRecherche.Focus();
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)

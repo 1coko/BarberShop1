@@ -5,25 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop.UI.Client"
         mc:Ignorable="d"
-        Title="frmAjoutClient" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="331,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="331,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtSexe" HorizontalAlignment="Left" Margin="331,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Margin="331,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="331,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtAdressePostale" HorizontalAlignment="Left" Margin="331,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <DatePicker x:Name="txtDateNaissance" HorizontalAlignment="Left" Margin="331,122,0,0" VerticalAlignment="Top" Width="256"/>
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="238,61,0,0" VerticalAlignment="Top"/>
-        <Label Content="Prénom(s)" HorizontalAlignment="Left" Margin="238,92,0,0" VerticalAlignment="Top"/>
-        <Label Content="Date de naissance" HorizontalAlignment="Left" Margin="238,121,0,0" VerticalAlignment="Top" Width="78"/>
-        <Label Content="Sexe" HorizontalAlignment="Left" Margin="238,151,0,0" VerticalAlignment="Top"/>
-        <Label Content="Téléphone" HorizontalAlignment="Left" Margin="238,174,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="238,197,0,0" VerticalAlignment="Top"/>
-        <Label Content="Adresse postale " HorizontalAlignment="Left" Margin="238,220,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnValider" Content="valider" HorizontalAlignment="Left" Margin="506,284,0,0" VerticalAlignment="Top" Width="81" Click="btnValider_Click"/>
-        <Button x:Name="btnAnnulerr" Content="annuler" HorizontalAlignment="Left" Margin="392,284,0,0" VerticalAlignment="Top" Width="81" Click="btnAnnulerr_Click"/>
-        <Label Content="AJOUT D'UN CLIENT" HorizontalAlignment="Left" Margin="167,28,0,0" VerticalAlignment="Top" Width="435"/>
+        Title="Ajout d'un client" Height="361" Width="630" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,104,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="164,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Column="1"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="164,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Column="1"/>
+        <TextBox x:Name="txtSexe" HorizontalAlignment="Left" Margin="164,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Column="1"/>
+        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Margin="164,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Column="1"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="164,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Column="1"/>
+        <TextBox x:Name="txtAdressePostale" HorizontalAlignment="Left" Margin="164,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Column="1"/>
+        <DatePicker x:Name="txtDateNaissance" HorizontalAlignment="Left" Margin="164,122,0,0" VerticalAlignment="Top" Width="256" Grid.Column="1"/>
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="70,61,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Prénom(s)" HorizontalAlignment="Left" Margin="70,92,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Date de naissance" HorizontalAlignment="Left" Margin="70,121,0,0" VerticalAlignment="Top" Width="78" Grid.Column="1"/>
+        <Label Content="Sexe" HorizontalAlignment="Left" Margin="70,151,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Téléphone" HorizontalAlignment="Left" Margin="70,174,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="70,197,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Adresse postale " HorizontalAlignment="Left" Margin="70,220,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="btnValider"  Background="#0E680B" Foreground="White" Content="Valider" HorizontalAlignment="Left" Margin="338,284,0,0" VerticalAlignment="Top" Width="81" Click="btnValider_Click" Grid.Column="1"/>
+        <Button x:Name="btnAnnulerr" Background="DarkRed" Foreground="White" Content="Annuler" HorizontalAlignment="Left" Margin="162,284,0,0" VerticalAlignment="Top" Width="82" Click="btnAnnulerr_Click" Grid.Column="1"/>
+        <Label Content="AJOUT D'UN CLIENT"  Background="Black" Foreground="White" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" Margin="2,18,0,0" VerticalAlignment="Top" Width="138" Grid.Column="1"/>
 
     </Grid>
 </Window>

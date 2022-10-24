@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop.UI.Client"
         mc:Ignorable="d"
-        Title="FrmGEstionClient" Height="449" Width="883" Loaded="Window_Loaded">
+        Title="Gestion des clients" Height="575" Width="1019" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid>
-        <DataGrid x:Name="gridClients"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,87,131,0" Height="311" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="567*"/>
+            <ColumnDefinition Width="452*"/>
+        </Grid.ColumnDefinitions>-->
+        <DataGrid x:Name="gridClients"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,129,48,0" Height="395" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header=" Nom" Width="2*" Binding="{Binding Nom}"/>
                 <DataGridTextColumn Header="Email" Width="2*" Binding="{Binding Mail }"/>
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAjout" Content="Ajouter" HorizontalAlignment="Left" Margin="574,54,0,0" VerticalAlignment="Top" Width="86" Click="btnAjout_Click"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="457,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="112" Click="btnSupprimer_Click">
+        <Button x:Name="btnAjout"  Background="#0E680B" Foreground="White" Content="Ajouter" HorizontalAlignment="Left" Margin="479,102,0,0" VerticalAlignment="Top" Width="110" Click="btnAjout_Click"/>
+        <Button x:Name="btnSupprimer" Background="DarkRed" Foreground="White" Content="Supprimer" HorizontalAlignment="Left" Margin="723,102,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="110" Click="btnSupprimer_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,11 +29,12 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBox x:Name="txtRecherche" HorizontalAlignment="Left" Margin="118,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" KeyDown="txtRecherche_KeyDown"/>
-        <Label Content="Rechercher" HorizontalAlignment="Left" Margin="45,61,0,0" VerticalAlignment="Top" Width="69"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="665,54,0,0" VerticalAlignment="Top" Width="87" Click="btnUpdate_Click"/>
-        <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="366,54,0,0" VerticalAlignment="Top" Width="82" Click="btnRefresh_Click"/>
-        <Button x:Name="btnReservation"  Content="Reservation" HorizontalAlignment="Left" Margin="774,106,0,0" VerticalAlignment="Top" Width="99" Click="btnReservation_Click"/>
+        <TextBox x:Name="txtRecherche" HorizontalAlignment="Left" Margin="118,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" KeyDown="txtRecherche_KeyDown"/>
+        <Label Content="Rechercher" HorizontalAlignment="Left" Margin="45,96,0,0" VerticalAlignment="Top" Width="69"/>
+        <Button x:Name="btnUpdate"  Background="#B6C804" Foreground="Black" Content="Modifier" HorizontalAlignment="Left" Margin="601,102,0,0" VerticalAlignment="Top" Width="110" Click="btnUpdate_Click"/>
+        <Button x:Name="btnRefresh" Background="#A5750B" Foreground="White"  Content="Actualiser" HorizontalAlignment="Left" Margin="358,102,0,0" VerticalAlignment="Top" Width="110" Click="btnRefresh_Click"/>
+        <Button x:Name="btnReservation" Background="#090761" Foreground="White"  Content="Reserver" HorizontalAlignment="Left" Margin="844,102,0,0" VerticalAlignment="Top" Width="110" Click="btnReservation_Click"/>
+        <Label Content="GESTION DES CLIENTS" HorizontalAlignment="Left" Margin="48,35,0,0" VerticalAlignment="Top" Width="193" Background="Black" Foreground="White" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 </Window>

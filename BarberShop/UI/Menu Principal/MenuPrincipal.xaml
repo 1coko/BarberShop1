@@ -5,25 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop.UI.Menu_Principal"
         mc:Ignorable="d"
-        Title="MenuPrincipal" Height="450" Width="800">
-    <Grid>
+        Title="Menu principal" Height="450" Width="800" WindowState="Maximized" Background="#D2D2D5">
+    <Grid Margin="10,10,10,5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Bienvenue sur votre site BarberShop" Margin="180,55,0,301" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Width="420"/>
-        <Label Content="la première appli dédié aux personnes qui n'aiment pas se prendre la tête" Margin="180,95,0,282" HorizontalAlignment="Left" FontWeight="Bold" Width="423" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="3.809"/>
-                    <RotateTransform Angle="0.536"/>
-                    <TranslateTransform X="0.933"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Button Content="Accéder au formulaire client" Margin="180,229,447,159" Click="Button_Click_Client"/>
-        <Button Content="Accéder au formulaire coiffeur" Margin="413,229,200,159" Click="Button_Click_Coiffeur"/>
-        <Button x:Name ="btnConsulterReservation" Content="Consulter les reservations" Margin="413,298,200,90" Click="btnConsulterReservation_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Bienvenue sur votre site BarberShop" Margin="0,55,0,0" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Width="446" Grid.ColumnSpan="3" VerticalAlignment="Top" Grid.Row="0"/>
+        <Label Content="Votre satisfaction, notre priorité"  FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="250" Height="30" Grid.ColumnSpan="3" VerticalAlignment="Top" Grid.Row="1"/>
+
+        <Button Content="Accéder au formulaire client" Background="DarkRed" Foreground="White" Click="Button_Click_Client" Grid.Column="0" Grid.Row="4" Width="200" Height="50"/>
+        <Button Content="Accéder au formulaire coiffeur"  Background="#0E680B" Foreground="White"  Click="Button_Click_Coiffeur" Grid.Column="1" Grid.Row="4" Width="200" Height="50"/>
+        <Button x:Name ="btnConsulterReservation" Background="#090761" Foreground="White" Content="Consulter les reservations"  Click="btnConsulterReservation_Click" Grid.Column="2" Grid.Row="4" Width="200" Height="50"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Grid.RowSpan="2" Grid.Row="2" VerticalAlignment="Top" Width="100" Source="/UI/Menu Principal/image.png"/>
+        <!--<Image  Source="/Photos/image.png" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Width="200" Height="200" />-->
+
 
 
     </Grid>
