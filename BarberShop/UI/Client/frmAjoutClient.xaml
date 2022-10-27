@@ -25,7 +25,7 @@
         <Label Content="Téléphone" HorizontalAlignment="Left" Margin="70,174,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="70,197,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label Content="Adresse postale " HorizontalAlignment="Left" Margin="70,220,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button x:Name="btnValider"  Background="#0E680B" Foreground="White" Content="Valider" HorizontalAlignment="Left" Margin="338,284,0,0" VerticalAlignment="Top" Width="81" Click="btnValider_Click" Grid.Column="1"/>
+        <Button x:Name="btnValider"  Background="#0E680B" Foreground="White" Content="Ajouter" HorizontalAlignment="Left" Margin="338,284,0,0" VerticalAlignment="Top" Width="81" Click="btnValider_Click" Grid.Column="1"/>
         <Button x:Name="btnAnnulerr" Background="DarkRed" Foreground="White" Content="Annuler" HorizontalAlignment="Left" Margin="162,284,0,0" VerticalAlignment="Top" Width="82" Click="btnAnnulerr_Click" Grid.Column="1"/>
         <Label Content="AJOUT D'UN CLIENT"  Background="Black" Foreground="White" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" Margin="2,18,0,0" VerticalAlignment="Top" Width="138" Grid.Column="1"/>
 

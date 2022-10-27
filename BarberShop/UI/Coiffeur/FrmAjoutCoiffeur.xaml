@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop.UI.Coiffeur"
         mc:Ignorable="d"
-        Title="FrmAjoutCoiffeur" Height="450" Width="800">
+        Title="Ajout d'un coiffeur" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <TextBox x:Name="txtNomCoiffeur" HorizontalAlignment="Left" Margin="375,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtPrenomCoiffeur" HorizontalAlignment="Left" Margin="375,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtSexeCoiffeur" HorizontalAlignment="Left" Margin="375,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtTelephoneCoiffeur" HorizontalAlignment="Left" Margin="375,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtEmailCoiffeur" HorizontalAlignment="Left" Margin="375,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtAdressePostaleCoiffeur" HorizontalAlignment="Left" Margin="375,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <DatePicker x:Name="txtDateNaissanceCoiffeur" HorizontalAlignment="Left" Margin="375,122,0,0" VerticalAlignment="Top" Width="256"/>
-        <Label Content="Nom *" HorizontalAlignment="Left" Margin="238,61,0,0" VerticalAlignment="Top"/>
-        <Label Content="Prénom(s) *" HorizontalAlignment="Left" Margin="238,92,0,0" VerticalAlignment="Top"/>
-        <Label Content="Date de naissance" HorizontalAlignment="Left" Margin="238,121,0,0" VerticalAlignment="Top" Width="110"/>
-        <Label Content="Sexe *" HorizontalAlignment="Left" Margin="238,151,0,0" VerticalAlignment="Top"/>
-        <Label Content="Téléphone *" HorizontalAlignment="Left" Margin="238,174,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email *" HorizontalAlignment="Left" Margin="238,197,0,0" VerticalAlignment="Top"/>
-        <Label Content="Adresse postale " HorizontalAlignment="Left" Margin="238,220,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="550,284,0,0" VerticalAlignment="Top" Width="81" Click="btnAjouterCoiffeur_Click"/>
-        <Button x:Name="btnAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="392,284,0,0" VerticalAlignment="Top" Width="81" Click="btnAnnuler_Click"/>
-        <Label Content="AJOUT D'UN COIFFEUR" HorizontalAlignment="Left" Margin="167,28,0,0" VerticalAlignment="Top" Width="435"/>
+        <TextBox x:Name="txtNomCoiffeur" HorizontalAlignment="Left" Margin="342,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="txtPrenomCoiffeur" HorizontalAlignment="Left" Margin="342,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="txtSexeCoiffeur" HorizontalAlignment="Left" Margin="342,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="txtTelephoneCoiffeur" HorizontalAlignment="Left" Margin="342,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="txtEmailCoiffeur" HorizontalAlignment="Left" Margin="342,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="txtAdressePostaleCoiffeur" HorizontalAlignment="Left" Margin="342,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <DatePicker x:Name="txtDateNaissanceCoiffeur" HorizontalAlignment="Left" Margin="342,165,0,0" VerticalAlignment="Top" Width="256"/>
+        <Label Content="Nom *" HorizontalAlignment="Left" Margin="206,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prénom(s) *" HorizontalAlignment="Left" Margin="206,135,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date de naissance" HorizontalAlignment="Left" Margin="206,164,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label Content="Sexe *" HorizontalAlignment="Left" Margin="206,194,0,0" VerticalAlignment="Top"/>
+        <Label Content="Téléphone *" HorizontalAlignment="Left" Margin="206,217,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email *" HorizontalAlignment="Left" Margin="206,240,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adresse postale " HorizontalAlignment="Left" Margin="206,263,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" Background="#0E680B" Foreground="White" HorizontalAlignment="Left" Margin="518,327,0,0" VerticalAlignment="Top" Width="80" Click="btnAjouterCoiffeur_Click"/>
+        <Button x:Name="btnAnnuler" Content="Annuler" Background="DarkRed" Foreground="White" HorizontalAlignment="Center" Margin="0,327,0,0" VerticalAlignment="Top" Width="80" Click="btnAnnuler_Click"/>
+        <Label Content="AJOUT D'UN COIFFEUR"  Background="Black" Foreground="White" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" Margin="58,25,0,0" VerticalAlignment="Top" Width="167"/>
     </Grid>
 </Window>

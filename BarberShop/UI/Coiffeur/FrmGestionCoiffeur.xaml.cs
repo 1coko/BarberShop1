@@ -34,6 +34,7 @@ namespace BarberShop.UI.Coiffeur
         // Evenement Loaded a faire sur l'ensmble de la fenetre Window du fichier WPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            txtRechercheCoiffeur.Focus();
             //// Remplir la grille 
             //MessageBox.Show("" +DateTime.MinValue);
 

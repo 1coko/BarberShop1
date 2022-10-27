@@ -32,6 +32,7 @@ namespace BarberShop.UI.ConsulterReservation
 
         private void FrmConsultationReservation_Loaded(object sender, RoutedEventArgs e)
         {
+            txtRechercheCoiffeur.Focus();
             //// Remplir la grille 
             //MessageBox.Show("" +DateTime.MinValue);
 

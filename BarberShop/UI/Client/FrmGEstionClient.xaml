@@ -14,7 +14,12 @@
         <DataGrid x:Name="gridClients"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,129,48,0" Height="395" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header=" Nom" Width="2*" Binding="{Binding Nom}"/>
+                <DataGridTextColumn Header=" Prenom" Width="2*" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Header=" Date de naissance" Width="2*" Binding="{Binding DateDeNaissance}"/>
+                <DataGridTextColumn Header=" Sexe" Width="2*" Binding="{Binding Sex}"/>
+                <DataGridTextColumn Header=" Telephone" Width="2*" Binding="{Binding Telephone}"/>
                 <DataGridTextColumn Header="Email" Width="2*" Binding="{Binding Mail }"/>
+                <DataGridTextColumn Header=" Adresse" Width="2*" Binding="{Binding AdressePostale}"/>
 
             </DataGrid.Columns>
         </DataGrid>
