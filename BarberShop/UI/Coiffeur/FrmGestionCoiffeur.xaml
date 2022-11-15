@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop.UI.Coiffeur"
         mc:Ignorable="d"
-        Title="Gestion des Coiffeurs" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Gestion des Coiffeurs" Height="575" Width="1019" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <DataGrid x:Name="gridCoiffeur"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,122,48,0" Height="231" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="gridCoiffeur"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,122,48,0" Height="396" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header=" Nom" Width="2*" Binding="{Binding Nom}"/>
                 <DataGridTextColumn Header=" Prenom" Width="2*" Binding="{Binding Prenom}"/>
@@ -18,8 +18,8 @@
                 <DataGridTextColumn Header="Sexe" Width="*" Binding="{Binding Sexe }"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAjoutCoiffeur" Content="Ajouter" Background="#0E680B" Foreground="White" HorizontalAlignment="Left" Margin="453,94,0,0" VerticalAlignment="Top" Width="86" Click="btnAjoutCoiffeur_Click" Height="20"/>
-        <Button x:Name="btnSupprimerCoiffeur" Content="Supprimer" Background="DarkRed" Foreground="White" HorizontalAlignment="Left" Margin="637,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="112" Click="btnSupprimerCoiffeur_Click" Height="20">
+        <Button x:Name="btnAjoutCoiffeur" Content="Ajouter" Background="#0E680B" Foreground="White" HorizontalAlignment="Left" Margin="675,94,0,0" VerticalAlignment="Top" Width="86" Click="btnAjoutCoiffeur_Click" Height="20"/>
+        <Button x:Name="btnSupprimerCoiffeur" Content="Supprimer" Background="DarkRed" Foreground="White" HorizontalAlignment="Left" Margin="858,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="112" Click="btnSupprimerCoiffeur_Click" Height="20">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -31,8 +31,8 @@
         </Button>
         <TextBox x:Name="txtRechercheCoiffeur" HorizontalAlignment="Left" Margin="122,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" KeyDown="txtRechercheCoiffeur_KeyDown" Height="20"/>
         <Label Content="Rechercher" HorizontalAlignment="Left" Margin="48,92,0,0" VerticalAlignment="Top" Width="69" Height="26"/>
-        <Button x:Name="btnModifierCoiffeur" Content="Modifier" Background="#B6C804" Foreground="Black" HorizontalAlignment="Left" Margin="545,94,0,0" VerticalAlignment="Top" Width="87" Click="btnModifierCoiffeur_Click" Height="20"/>
-        <Button x:Name="btnRefreshCoiffeur" Content="Actualiser" Background="#A5750B" Foreground="White" HorizontalAlignment="Left" Margin="366,94,0,0" VerticalAlignment="Top" Width="82" Click="btnRefreshCoiffeur_Click" Height="20"/>
+        <Button x:Name="btnModifierCoiffeur" Content="Modifier" Background="#B6C804" Foreground="Black" HorizontalAlignment="Left" Margin="766,94,0,0" VerticalAlignment="Top" Width="87" Click="btnModifierCoiffeur_Click" Height="20"/>
+        <Button x:Name="btnRefreshCoiffeur" Content="Actualiser" Background="#A5750B" Foreground="White" HorizontalAlignment="Left" Margin="588,94,0,0" VerticalAlignment="Top" Width="82" Click="btnRefreshCoiffeur_Click" Height="20"/>
         <Label Content="GESTION DES COIFFEURS" HorizontalAlignment="Left" Margin="48,35,0,0" VerticalAlignment="Top" Width="215" Background="Black" Foreground="White" FontSize="16" FontWeight="Bold"/>
 
     </Grid>

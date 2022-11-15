@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BarberShop.UI.ConsulterReservation"
         mc:Ignorable="d"
-        Title="Consultation des reservations" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Consultation des reservations" Height="575" Width="1019" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <DataGrid x:Name="gridReservation"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,87,48,0" Height="311" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="gridReservation"  AutoGenerateColumns="False"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,112,48,0" Height="400" VerticalAlignment="Top" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header=" Nom Coiffeur" Width="3*" Binding="{Binding NomCoiffeur}"/>
                 <DataGridTextColumn Header=" Nom Client" Width="3*" Binding="{Binding NomClient}"/>
@@ -16,7 +16,7 @@
                 <DataGridTextColumn Header=" Heure Reservation" Width="1*" Binding="{Binding HeureReservation}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Background="DarkRed" Foreground="White" HorizontalAlignment="Left" Margin="636,62,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="112" >
+        <Button x:Name="btnSupprimer" Content="Supprimer" Background="DarkRed" Foreground="White" HorizontalAlignment="Left" Margin="859,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="112" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -26,10 +26,11 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBox x:Name="txtRechercheCoiffeur" HorizontalAlignment="Left" Margin="118,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" />
-        <Label Content="Rechercher" HorizontalAlignment="Left" Margin="45,60,0,0" VerticalAlignment="Top" Width="69"/>
-        <Button x:Name="btnModifierCoiffeur" Content="Modifier" Background="#B6C804" Foreground="Black" HorizontalAlignment="Left" Margin="539,62,0,0" VerticalAlignment="Top" Width="87" />
-        <Button x:Name="btnRefreshCoiffeur" Content="Actualiser" Background="#A5750B" Foreground="White"  HorizontalAlignment="Left" Margin="448,62,0,0" VerticalAlignment="Top" Width="82" />
+        <TextBox x:Name="txtRechercheCoiffeur" HorizontalAlignment="Left" Margin="118,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" />
+        <Label Content="Rechercher" HorizontalAlignment="Left" Margin="45,79,0,0" VerticalAlignment="Top" Width="69"/>
+        <Button x:Name="btnModifierCoiffeur" Content="Modifier" Background="#B6C804" Foreground="Black" HorizontalAlignment="Left" Margin="762,81,0,0" VerticalAlignment="Top" Width="87" />
+        <Button x:Name="btnRefreshCoiffeur" Content="Actualiser" Background="#A5750B" Foreground="White"  HorizontalAlignment="Left" Margin="672,81,0,0" VerticalAlignment="Top" Width="82" />
+        <Label Content="GESTION DES RESERVATIONS" HorizontalAlignment="Left" Margin="48,17,0,0" VerticalAlignment="Top" Width="240" Background="Black" Foreground="White" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 </Window>

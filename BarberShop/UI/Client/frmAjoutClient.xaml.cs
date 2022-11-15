@@ -35,13 +35,13 @@ namespace BarberShop.UI.Client
 
 
             //client.Select();
-            MessageBox.Show("Le client a bien été ajouté");
+            MessageBox.Show("Le client a bien été ajouté", "CONFIRMATION", MessageBoxButton.OK, MessageBoxImage.Information);
 
 
             // Ajouter la nouvelle ligne inseree a la grille
             // 
             // Variable static 
-            if(FrmGEstionClient.itemSource != null)
+            if (FrmGEstionClient.itemSource != null)
                 FrmGEstionClient.itemSource.Add(client);
 
 

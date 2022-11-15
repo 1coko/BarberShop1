@@ -42,7 +42,7 @@ namespace BarberShop.UI.Coiffeur
                 coiffeur.Créer();
 
                 // Afficher un message de confirmation de l'ajout du coiffeur dans la BDD
-                MessageBox.Show("Le coiffeur a bien été ajouté");
+                MessageBox.Show("Le coiffeur a bien été ajouté", "CONFIRMATION",MessageBoxButton.OK,MessageBoxImage.Information);
 
 
                 // Ajouter la nouvelle ligne sur la grille WPF qui affiche les données de notre BDD
